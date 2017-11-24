@@ -1,0 +1,21 @@
+{
+    "name": "ouranoshong/wx-access-token-api",
+    "description": "Api for get token from wx service",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ouranoshong",
+            "email": "ouranoshong@outlook.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "symfony/console": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wx\\Access\\Token\\": "src"
+        }
+    }
+}
