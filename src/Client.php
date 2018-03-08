@@ -94,7 +94,6 @@ class Client
 
     public function isExpired() {
         if ($updateTime = $this->getStorage()->getUpdateTime($this->keyName)) {
-            var_dump($updateTime);
             return (time() - $updateTime) > $this->configuration->expiresSeconds;
         }
 
