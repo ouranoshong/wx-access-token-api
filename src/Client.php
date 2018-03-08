@@ -112,4 +112,8 @@ class Client
             }
         }
     }
+
+    public function setKeyName($name) {
+        $this->keyName = $name;
+    }
 }
