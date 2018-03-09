@@ -15,8 +15,15 @@ namespace Wx\Access\Token;
  */
 class FileStorageHandler implements StorageHandlerInterface
 {
+
+    private $savePath = '';
+
     public function generateFileName($key) {
-        return sys_get_temp_dir() . '/'.$key;
+        if (!$this->savePath) {
+            $this->savePath = sys_get_temp_dir();
+        }
+
+        return $this->savePath . '/'. $key;
     }
 
     public function save($key, $value)
@@ -33,4 +40,7 @@ class FileStorageHandler implements StorageHandlerInterface
         return @filemtime($this->generateFileName($key));
     }
 
+    public function setSavePath($path) {
+        $this->savePath = $path;
+    }
 }
